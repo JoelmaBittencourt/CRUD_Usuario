@@ -37,8 +37,6 @@ public class Usuario implements Serializable {
 	@Length(min =8, max = 20,message = "Insira um numero valido")
 	private Long telefone;
 
-	@NotEmpty(message= "precisa inserir Login")
-	private String login;
 
 	@NotEmpty(message= "precisa inserir Senha")
 	private String senha;
@@ -50,14 +48,13 @@ public class Usuario implements Serializable {
 	}
 
 //construtor com todos os parametros
-	public Usuario(Long id, String nome, String cPF, String email, Long telefone, String login, String senha) {
+	public Usuario(Long id, String nome, String CPF, String email, Long telefone, String login, String senha) {
 		super();
 		this.id = id;
 		this.nome = nome;
-		CPF = cPF;
+		CPF = CPF;
 		this.email = email;
 		this.telefone = telefone;
-		this.login = login;
 		this.senha = senha;
 	}
 
@@ -92,14 +89,7 @@ public class Usuario implements Serializable {
 
 	public void setTelefone(Long telefone) {
 		this.telefone = telefone;
-	}
-
-	public String getLogin() {
-		return login;
-	}
-
-	public void setLogin(String login) {
-		this.login = login;
+	
 	}
 
 	public String getSenha() {
@@ -128,4 +118,13 @@ public class Usuario implements Serializable {
 		return Objects.equals(id, other.id);
 	}
 
+	public Object getId() {
+		return id;
+	
+	}
+
+	public void setId(Object object) {
+		// TODO Auto-generated method stub
+		
+	}
 }
